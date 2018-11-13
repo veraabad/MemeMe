@@ -1,19 +1,76 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Meme Me Editor View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="MemeMeEditorViewController" customModule="MemeMe" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <subviews>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="06a-O2-GQY">
+                                <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                                <items>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="sKD-70-9HT"/>
+                                    <barButtonItem systemItem="camera" id="fJf-fq-fnW"/>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="SnX-Li-fw7"/>
+                                    <barButtonItem title="Album" id="CDk-td-MfU"/>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="KUR-39-z4n"/>
+                                </items>
+                            </toolbar>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zit-si-DPW">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                <items>
+                                    <barButtonItem systemItem="action" id="WeB-55-W9v"/>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="bWr-mF-F2D"/>
+                                    <barButtonItem systemItem="cancel" id="NQ3-nQ-GjC"/>
+                                </items>
+                            </toolbar>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ZKB-5a-uUN">
+                                <rect key="frame" x="0.0" y="44" width="375" height="579"/>
+                            </imageView>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" text="TOP" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HMn-aO-kM1">
+                                <rect key="frame" x="32" y="108" width="311" height="17"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" text="BOTTOM" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lAt-um-J9Q">
+                                <rect key="frame" x="32" y="542" width="311" height="17"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="zit-si-DPW" secondAttribute="trailing" id="3W8-u9-2kk"/>
+                            <constraint firstItem="ZKB-5a-uUN" firstAttribute="top" secondItem="zit-si-DPW" secondAttribute="bottom" id="62D-7x-mgQ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ZKB-5a-uUN" secondAttribute="trailing" id="7Qw-sc-8AJ"/>
+                            <constraint firstItem="zit-si-DPW" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="DFn-lp-bGg"/>
+                            <constraint firstItem="ZKB-5a-uUN" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Hd9-FI-0dL"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="06a-O2-GQY" secondAttribute="bottom" id="K4h-dw-k8H"/>
+                            <constraint firstItem="HMn-aO-kM1" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="32" id="OsU-u4-KqN"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="lAt-um-J9Q" secondAttribute="trailing" constant="32" id="VNn-z0-xsR"/>
+                            <constraint firstItem="HMn-aO-kM1" firstAttribute="top" secondItem="zit-si-DPW" secondAttribute="bottom" constant="64" id="Ysn-Zn-kYN"/>
+                            <constraint firstItem="06a-O2-GQY" firstAttribute="top" secondItem="ZKB-5a-uUN" secondAttribute="bottom" id="fXp-eX-uhJ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="06a-O2-GQY" secondAttribute="trailing" id="haU-aa-j48"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="HMn-aO-kM1" secondAttribute="trailing" constant="32" id="mG0-GP-3hX"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="top" secondItem="zit-si-DPW" secondAttribute="top" constant="20" id="nbf-Ro-DT0"/>
+                            <constraint firstItem="06a-O2-GQY" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="nud-U6-PXt"/>
+                            <constraint firstItem="06a-O2-GQY" firstAttribute="top" secondItem="lAt-um-J9Q" secondAttribute="bottom" constant="64" id="r4e-Hr-N1o"/>
+                            <constraint firstItem="lAt-um-J9Q" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="32" id="xgB-vr-hMb"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>
