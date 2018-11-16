@@ -80,13 +80,17 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="06a-O2-GQY" secondAttribute="bottom" id="K4h-dw-k8H"/>
                             <constraint firstItem="HMn-aO-kM1" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="32" id="OsU-u4-KqN"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="lAt-um-J9Q" secondAttribute="trailing" constant="32" id="VNn-z0-xsR"/>
-                            <constraint firstItem="HMn-aO-kM1" firstAttribute="top" secondItem="zit-si-DPW" secondAttribute="bottom" constant="96" id="Ysn-Zn-kYN"/>
+                            <constraint firstItem="HMn-aO-kM1" firstAttribute="top" secondItem="zit-si-DPW" secondAttribute="bottom" constant="96" id="Ysn-Zn-kYN">
+                                <variation key="heightClass=compact-widthClass=compact" constant="10"/>
+                            </constraint>
                             <constraint firstItem="06a-O2-GQY" firstAttribute="top" secondItem="ZKB-5a-uUN" secondAttribute="bottom" id="fXp-eX-uhJ"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="06a-O2-GQY" secondAttribute="trailing" id="haU-aa-j48"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="HMn-aO-kM1" secondAttribute="trailing" constant="32" id="mG0-GP-3hX"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="top" secondItem="zit-si-DPW" secondAttribute="top" id="nbf-Ro-DT0"/>
                             <constraint firstItem="06a-O2-GQY" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="nud-U6-PXt"/>
-                            <constraint firstItem="06a-O2-GQY" firstAttribute="top" secondItem="lAt-um-J9Q" secondAttribute="bottom" constant="96" id="r4e-Hr-N1o"/>
+                            <constraint firstItem="06a-O2-GQY" firstAttribute="top" secondItem="lAt-um-J9Q" secondAttribute="bottom" constant="96" id="r4e-Hr-N1o">
+                                <variation key="heightClass=compact-widthClass=compact" constant="10"/>
+                            </constraint>
                             <constraint firstItem="lAt-um-J9Q" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="32" id="xgB-vr-hMb"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
