@@ -97,7 +97,9 @@
                         <outlet property="bottomTextField" destination="lAt-um-J9Q" id="Z1N-cD-4xI"/>
                         <outlet property="cameraButton" destination="fJf-fq-fnW" id="gmw-TK-3Pm"/>
                         <outlet property="memeImageView" destination="ZKB-5a-uUN" id="Z6c-Xp-Ox8"/>
+                        <outlet property="navBar" destination="Z2D-Ld-6S0" id="0ML-vA-scd"/>
                         <outlet property="sharingButton" destination="iyw-Af-DmA" id="k15-7C-JdC"/>
+                        <outlet property="toolBar" destination="06a-O2-GQY" id="OqJ-1N-3bW"/>
                         <outlet property="topTextField" destination="HMn-aO-kM1" id="m5t-Ev-pxE"/>
                     </connections>
                 </viewController>
