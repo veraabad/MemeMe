@@ -87,8 +87,12 @@
                                     <constraint firstItem="HMn-aO-kM1" firstAttribute="leading" secondItem="Mtd-SW-ddm" secondAttribute="leading" constant="32" id="WiO-mb-lfg"/>
                                     <constraint firstAttribute="trailing" secondItem="HMn-aO-kM1" secondAttribute="trailing" constant="32" id="Xs2-Fm-Jbx"/>
                                     <constraint firstAttribute="bottom" secondItem="ZKB-5a-uUN" secondAttribute="bottom" id="bdk-Zs-TGh"/>
-                                    <constraint firstAttribute="bottom" secondItem="lAt-um-J9Q" secondAttribute="bottom" constant="64" id="dpq-MS-fJd"/>
-                                    <constraint firstItem="HMn-aO-kM1" firstAttribute="top" secondItem="Mtd-SW-ddm" secondAttribute="top" constant="64" id="kOK-eu-pAI"/>
+                                    <constraint firstAttribute="bottom" secondItem="lAt-um-J9Q" secondAttribute="bottom" constant="64" id="dpq-MS-fJd">
+                                        <variation key="heightClass=compact-widthClass=compact" constant="16"/>
+                                    </constraint>
+                                    <constraint firstItem="HMn-aO-kM1" firstAttribute="top" secondItem="Mtd-SW-ddm" secondAttribute="top" constant="64" id="kOK-eu-pAI">
+                                        <variation key="heightClass=compact-widthClass=compact" constant="16"/>
+                                    </constraint>
                                     <constraint firstAttribute="trailing" secondItem="lAt-um-J9Q" secondAttribute="trailing" constant="32" id="maw-cJ-jYE"/>
                                     <constraint firstAttribute="trailing" secondItem="ZKB-5a-uUN" secondAttribute="trailing" id="raK-ND-MCu"/>
                                 </constraints>
