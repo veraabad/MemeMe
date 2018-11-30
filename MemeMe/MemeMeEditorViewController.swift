@@ -17,6 +17,7 @@ class MemeMeEditorViewController: UIViewController, UIImagePickerControllerDeleg
     @IBOutlet weak var sharingButton: UIBarButtonItem!
     @IBOutlet weak var navBar: UINavigationBar!
     @IBOutlet weak var toolBar: UIToolbar!
+    @IBOutlet weak var scrollView: UIScrollView!
     weak var activeTextField: UITextField!
 
     let memeTextAttributes:[NSAttributedString.Key: Any] = [
@@ -27,6 +28,13 @@ class MemeMeEditorViewController: UIViewController, UIImagePickerControllerDeleg
     ]
 
     // UIViewController methods
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        // Disable camera if the device does not have one
+        cameraButton.isEnabled = UIImagePickerController.isSourceTypeAvailable(.camera)
+    }
+
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 
@@ -58,7 +66,7 @@ class MemeMeEditorViewController: UIViewController, UIImagePickerControllerDeleg
             (activityType:UIActivity.ActivityType?, completed: Bool, retItems:[Any]?, error: Error?) in
             if completed {
                 // Only call save() if sharing was completed
-                self.save()
+                self.save(memedImage: memedImage)
             }
         }
         present(activityVC, animated: true, completion: nil)
@@ -71,9 +79,7 @@ class MemeMeEditorViewController: UIViewController, UIImagePickerControllerDeleg
     }
 
     // MARK: Meme methods
-    func save() {
-        let memedImage = generateMemedImage()
-
+    func save(memedImage: UIImage) {
         let meme = Meme(topText: topTextField.text!, bottomText: bottomTextField.text!, originalImage: memeImageView.image!, memedImage: memedImage)
     }
 
@@ -100,10 +106,8 @@ class MemeMeEditorViewController: UIViewController, UIImagePickerControllerDeleg
         present(pickerController, animated: true, completion: nil)
     }
 
-    // Sets the initial view for textFields, disables sharing button
-    // and checks to see if camera functionality is available
+    // Sets the initial view for textFields and disables sharing button
     func initialSetup() {
-        cameraButton.isEnabled = UIImagePickerController.isSourceTypeAvailable(.camera)
         enableSharing(false)
         setupTextField(topTextField, withString: "TOP")
         setupTextField(bottomTextField, withString: "BOTTOM")
@@ -140,18 +144,22 @@ class MemeMeEditorViewController: UIViewController, UIImagePickerControllerDeleg
     // if so then shift view
     @objc func keyboardDidShow(_ notification: Notification) {
         var viewFrame = view.frame
-        viewFrame.size.height -= getKeyboardHeight(notification)
+        let kbHeight = getKeyboardHeight(notification)
+        viewFrame.size.height -= kbHeight
 
+        let contentInsets = UIEdgeInsets(top: 0, left: 0, bottom: kbHeight, right: 0)
+        scrollView.contentInset = contentInsets
+        scrollView.scrollIndicatorInsets = contentInsets
+        
         if !viewFrame.contains(activeTextField.frame.origin) {
-            view.frame.origin.y -= getKeyboardHeight(notification)
+            scrollView.scrollRectToVisible(activeTextField.frame, animated: true)
         }
     }
 
     // Shift view back to its original state
     @objc func keyboardDidHide(_ notification: Notification) {
-        if view.frame.origin.y != 0 {
-            view.frame.origin.y = 0
-        }
+        scrollView.contentInset = UIEdgeInsets.zero
+        scrollView.scrollIndicatorInsets = UIEdgeInsets.zero
     }
 
     // Returns height of keyboard
