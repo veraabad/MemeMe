@@ -34,4 +34,10 @@ class BaseViewController: UIViewController {
         let memeEditorVC = self.storyboard?.instantiateViewController(withIdentifier: "memeEditorViewController") as! MemeMeEditorViewController
         self.present(memeEditorVC, animated: true, completion: nil)
     }
+
+    func showMemeDetail(meme: Meme) {
+        let memeDetailVC = self.storyboard?.instantiateViewController(withIdentifier: memeDetailViewController) as! MemeDetailViewController
+        memeDetailVC.meme = meme
+        self.navigationController?.pushViewController(memeDetailVC, animated: true)
+    }
 }

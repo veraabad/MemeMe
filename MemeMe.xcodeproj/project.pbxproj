@@ -17,6 +17,7 @@
 		BC75242121B58DAE00B5C18F /* MemeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC75242021B58DAE00B5C18F /* MemeDetailViewController.swift */; };
 		BCFA07FD21B58F2E000E3E5B /* SentMemesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCFA07FC21B58F2E000E3E5B /* SentMemesTableViewController.swift */; };
 		BCFA07FF21B58F3A000E3E5B /* SentMemesCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCFA07FE21B58F3A000E3E5B /* SentMemesCollectionViewController.swift */; };
+		BCFA080121B82AD6000E3E5B /* SentMemesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCFA080021B82AD6000E3E5B /* SentMemesCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		BC75242021B58DAE00B5C18F /* MemeDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemeDetailViewController.swift; sourceTree = "<group>"; };
 		BCFA07FC21B58F2E000E3E5B /* SentMemesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SentMemesTableViewController.swift; sourceTree = "<group>"; };
 		BCFA07FE21B58F3A000E3E5B /* SentMemesCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SentMemesCollectionViewController.swift; sourceTree = "<group>"; };
+		BCFA080021B82AD6000E3E5B /* SentMemesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SentMemesCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +71,7 @@
 				BC75241E21B58D8800B5C18F /* BaseViewController.swift */,
 				BCFA07FC21B58F2E000E3E5B /* SentMemesTableViewController.swift */,
 				BCFA07FE21B58F3A000E3E5B /* SentMemesCollectionViewController.swift */,
+				BCFA080021B82AD6000E3E5B /* SentMemesCollectionViewCell.swift */,
 				BC75242021B58DAE00B5C18F /* MemeDetailViewController.swift */,
 				BC752418219EA62000B5C18F /* Meme.swift */,
 				BC0EC0BE2199E1FD00FB20DC /* Main.storyboard */,
@@ -154,6 +157,7 @@
 				BCFA07FF21B58F3A000E3E5B /* SentMemesCollectionViewController.swift in Sources */,
 				BCFA07FD21B58F2E000E3E5B /* SentMemesTableViewController.swift in Sources */,
 				BC75241F21B58D8800B5C18F /* BaseViewController.swift in Sources */,
+				BCFA080121B82AD6000E3E5B /* SentMemesCollectionViewCell.swift in Sources */,
 				BC0EC0BD2199E1FD00FB20DC /* MemeMeEditorViewController.swift in Sources */,
 				BC0EC0BB2199E1FD00FB20DC /* AppDelegate.swift in Sources */,
 				BC75242121B58DAE00B5C18F /* MemeDetailViewController.swift in Sources */,
