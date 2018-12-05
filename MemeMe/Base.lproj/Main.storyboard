@@ -255,6 +255,9 @@
                         <viewLayoutGuide key="safeArea" id="tgP-Dg-Zn2"/>
                     </view>
                     <navigationItem key="navigationItem" id="YDP-bQ-PuW"/>
+                    <connections>
+                        <outlet property="sentMemesTableView" destination="2NO-rp-XuP" id="niq-XT-g6p"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6UJ-bg-sci" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -319,6 +322,7 @@
                     <navigationItem key="navigationItem" id="dzM-j2-izt"/>
                     <connections>
                         <outlet property="flowLayout" destination="79v-1B-08K" id="dK3-du-k3e"/>
+                        <outlet property="sentMemesCollectionView" destination="YLD-WK-1cr" id="wTL-DN-1O2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WcL-IR-n8S" userLabel="First Responder" sceneMemberID="firstResponder"/>

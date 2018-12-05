@@ -10,10 +10,21 @@ import UIKit
 
 class SentMemesTableViewController: BaseViewController, UITableViewDelegate, UITableViewDataSource {
 
+    // MARK: Properties
     let sentMemeTableViewCell = "sentMemeTableViewCell"
+
+    // MARK: Outlets
+    @IBOutlet weak var sentMemesTableView: UITableView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+
+        // Reload in case a new meme has been saved
+        sentMemesTableView.reloadData()
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

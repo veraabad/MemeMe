@@ -14,6 +14,7 @@ class SentMemesCollectionViewController: BaseViewController, UICollectionViewDel
     let sentMemesCollectionViewCell = "sentMemesCollectionViewCell"
 
     // MARK: Outlets
+    @IBOutlet weak var sentMemesCollectionView: UICollectionView!
     @IBOutlet weak var flowLayout: UICollectionViewFlowLayout!
 
     override func viewDidLoad() {
@@ -26,6 +27,13 @@ class SentMemesCollectionViewController: BaseViewController, UICollectionViewDel
         flowLayout.minimumInteritemSpacing = space
         flowLayout.minimumLineSpacing = space
         flowLayout.itemSize = CGSize(width: dimension, height: dimension)
+    }
+
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+
+        // Reload in case a new meme has been saved
+        sentMemesCollectionView.reloadData()
     }
 
     // MARK: Collection View Data Source
