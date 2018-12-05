@@ -76,6 +76,8 @@ class MemeMeEditorViewController: UIViewController, UIImagePickerControllerDeleg
         self.view.endEditing(true) // Dismiss keyboard
         memeImageView.image = UIImage() // Clear out image
         initialSetup() // Reset to initial view
+
+        closeMemeEditor()
     }
 
     // MARK: Meme methods
@@ -84,6 +86,8 @@ class MemeMeEditorViewController: UIViewController, UIImagePickerControllerDeleg
 
         // Add to memes array in the Application Delegate
         (UIApplication.shared.delegate as! AppDelegate).memes.append(meme)
+
+        closeMemeEditor()
     }
 
     func generateMemedImage() -> UIImage {
@@ -139,6 +143,11 @@ class MemeMeEditorViewController: UIViewController, UIImagePickerControllerDeleg
 
     func enableSharing(_ isEnabled: Bool) {
         sharingButton.isEnabled = isEnabled
+    }
+
+    func closeMemeEditor() {
+        // Close the Meme Editor
+        self.dismiss(animated: true, completion: nil)
     }
 
     // MARK: Keyboard methods
