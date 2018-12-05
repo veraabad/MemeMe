@@ -24,9 +24,9 @@ class BaseViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        if let navController = self.navigationController {
+        if self.navigationController != nil {
             let addMemeBarItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(showMemeEditor))
-            navController.navigationItem.rightBarButtonItem = addMemeBarItem
+            self.navigationItem.setRightBarButton(addMemeBarItem, animated: true)
         }
     }
 
