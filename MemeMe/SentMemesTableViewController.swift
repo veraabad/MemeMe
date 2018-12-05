@@ -8,23 +8,35 @@
 
 import UIKit
 
-class SentMemesTableViewController: UIViewController {
+class SentMemesTableViewController: BaseViewController, UITableViewDelegate, UITableViewDataSource {
+
+    let sentMemeTableViewCell = "sentMemeTableViewCell"
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
-    
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if let memes = memes {
+            return memes.count
+        } else {
+            return 0
+        }
     }
-    */
 
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: sentMemeTableViewCell, for: indexPath)
+        if let meme = memes?[indexPath.row] {
+            cell.imageView?.image = meme.memedImage
+            cell.textLabel?.text = meme.topText + " " + meme.bottomText
+        }
+        return cell
+    }
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let memeDetailVC = self.storyboard?.instantiateViewController(withIdentifier: memeDetailViewController) as! MemeDetailViewController
+        let meme = memes?[indexPath.row]
+        memeDetailVC.meme = meme
+        self.navigationController?.pushViewController(memeDetailVC, animated: true)
+    }
 }

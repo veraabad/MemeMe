@@ -8,23 +8,30 @@
 
 import UIKit
 
+let memeDetailViewController = "memeDetailViewController"
+let memeEditorViewController = "memeEditorViewController"
+
 class BaseViewController: UIViewController {
+
+    var memes: [Meme]? {
+        if let appDelegate = UIApplication.shared.delegate as? AppDelegate {
+            return appDelegate.memes
+        } else {
+            return nil
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        if let navController = self.navigationController {
+            let addMemeBarItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(showMemeEditor))
+            navController.navigationItem.rightBarButtonItem = addMemeBarItem
+        }
     }
-    
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @objc func showMemeEditor() {
+        let memeEditorVC = self.storyboard?.instantiateViewController(withIdentifier: "memeEditorViewController") as! MemeMeEditorViewController
+        self.present(memeEditorVC, animated: true, completion: nil)
     }
-    */
-
 }
