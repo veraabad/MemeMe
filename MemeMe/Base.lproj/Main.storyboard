@@ -10,11 +10,11 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Item-->
+        <!--Navigation Controller-->
         <scene sceneID="F56-4k-eug">
             <objects>
                 <navigationController id="ESd-U9-AlV" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="rH1-I9-Orr"/>
+                    <tabBarItem key="tabBarItem" title="" image="table" selectedImage="table" id="rH1-I9-Orr"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="YUl-Ok-b9Y">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -45,11 +45,11 @@
             </objects>
             <point key="canvasLocation" x="-2180" y="-282"/>
         </scene>
-        <!--Item-->
+        <!--Navigation Controller-->
         <scene sceneID="w58-uw-3eZ">
             <objects>
                 <navigationController id="YDU-XA-tE4" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="P4j-6n-PAh"/>
+                    <tabBarItem key="tabBarItem" title="" image="collection" selectedImage="collection" id="P4j-6n-PAh"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="lg8-tb-xyM">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -330,4 +330,8 @@
             <point key="canvasLocation" x="-303.19999999999999" y="120.98950524737631"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="collection" width="30" height="30.5"/>
+        <image name="table" width="30" height="30"/>
+    </resources>
 </document>
