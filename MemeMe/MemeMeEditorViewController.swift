@@ -93,8 +93,8 @@ class MemeMeEditorViewController: UIViewController, UIImagePickerControllerDeleg
     func generateMemedImage() -> UIImage {
         hideBars(true) // Do not want to see navBar and toolBar in the memed image
 
-        UIGraphicsBeginImageContext(self.view.frame.size)
-        view.drawHierarchy(in: self.view.frame, afterScreenUpdates: true)
+        UIGraphicsBeginImageContextWithOptions(scrollView.frame.size, scrollView.isOpaque, 0.0)
+        scrollView.drawHierarchy(in: scrollView.bounds, afterScreenUpdates: true)
         let memedImage: UIImage = UIGraphicsGetImageFromCurrentImageContext()!
         UIGraphicsEndImageContext()
 
